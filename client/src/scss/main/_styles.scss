@@ -1,0 +1,31 @@
+// variables
+@import './variables';
+
+// mixins
+@import './mixins/animations';
+@import './mixins/background-variant';
+@import './mixins/transform';
+@import './mixins/utilities';
+
+// animations
+@import './animations';
+
+// reboot
+@import './reboot';
+
+// utilites
+@import './utilities/positions';
+
+// components
+@import './component/navbar';
+@import './component/preloader';
+@import './component/card';
+@import './component/sidebar';
+@import './component/stepper';
+@import './component/footer';
+
+// screens
+@import './pages/landing';
+@import './pages/cart';
+@import './pages/checkout';
+@import './pages/product';

@@ -1,0 +1,93 @@
+.checkout-container {
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+}
+.white-container {
+  background-color: #fff;
+  width: 80%;
+  min-height: 250px;
+  margin: 50px auto;
+  padding: 30px 80px;
+  overflow: hidden;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  @media (max-width: $large) {
+    padding: 30px 30px;
+  }
+}
+
+fieldset {
+  border: 1px solid $gray-500;
+  margin: 15px 0px;
+  border-radius: 10px;
+  padding: 10px 50px 15px 50px;
+  @media (max-width: $large) {
+    padding: 10px 10px 15px 10px;
+  }
+  .sub-total {
+    float: right;
+  }
+  legend {
+    display: block;
+    white-space: nowrap;
+    float: none;
+    width: auto;
+    margin-left: -6px;
+    font: normal normal normal 18px/17px;
+    color: $black;
+  }
+  .inputs {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    @media (max-width: $large) {
+      display: flex;
+      flex-direction: column;
+    }
+    .flex-col {
+      width: 100%;
+      padding: 0px 15px;
+    }
+  }
+  input,
+  select {
+    padding: 5px;
+    width: 100%;
+    height: 35px;
+    border: 1px solid $gray-450;
+    border-radius: 5px;
+    font: normal normal normal 15px/17px;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+.btn-checkout-theme {
+  min-width: 80px;
+  height: 38px;
+  padding: 0 20px;
+  background: $patient 0% 0% no-repeat padding-box;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  color: $white;
+  cursor: pointer;
+  &.link {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  &.dark {
+    background: black 0% 0% no-repeat padding-box;
+  }
+}
+.required {
+  color: $patient;
+}

@@ -1,0 +1,260 @@
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+// Color system
+@use "sass:math";
+// Shades of grey
+$white: #ffffff;
+$gray-100: #f3f7fa;
+$gray-200: #f5f8fb;
+$gray-300: #f0f3f6;
+$gray-350: #c5c5c5;
+$gray-400: #eaedf2;
+$gray-450: #e5e2e2;
+$gray-500: #d1d7e0;
+$gray-550: #c8c5cb;
+$gray-600: #93a5be;
+$gray-700: #66799e;
+$gray-800: #506690;
+$gray-900: #4a5073;
+$gray-light: #929292;
+$dark: #262b40;
+$black: #2e3650;
+$pure-black: #000000;
+$light-gray: #707070;
+// fusv-disable
+$grays: (
+  '100': $gray-100,
+  '200': $gray-200,
+  '300': $gray-300,
+  '400': $gray-400,
+  '500': $gray-500,
+  '600': $gray-600,
+  '700': $gray-700,
+  '800': $gray-800,
+  '900': $gray-900
+);
+// fusv-enable
+
+// Generic colors
+$blue: #0948b3;
+$indigo: #4c5680;
+$purple: #8965e0;
+$pink: #c96480;
+$red: #fa5252;
+$orange: #ff9f89;
+$brown: #b9a084;
+$yellow: #f5b759;
+$yellow-alt: #fde9ca;
+$green: #05a677;
+$teal: #1e90ff;
+$cyan: #63b1bd;
+$soft-indigo: #f5e8ff;
+$soft-green: #2ca58d;
+$light-green: #75cd64;
+// scss-docs-start colors-map
+$colors: (
+  'blue': $blue,
+  'indigo': $indigo,
+  'purple': $purple,
+  'pink': $pink,
+  'red': $red,
+  'orange': $orange,
+  'yellow': $yellow,
+  'green': $green,
+  'teal': $teal,
+  'cyan': $cyan,
+  'white': $white,
+  'gray': $gray-600,
+  'gray-dark': $gray-800
+);
+// scss-docs-end colors-map
+
+// Color scheme
+$default: #262b40;
+$primary: #262b40;
+$secondary: #61dafb;
+$tertiary: #1b998b;
+$quaternary: #c96480;
+
+// Series names and colors. This can be extended or customized as desired. Just add more series and colors.
+$ct-series-names: (a, b, c, d, e, f, g) !default;
+$ct-series-colors: (
+  #1b998b,
+  #17a5ce,
+  #262b40,
+  #f5b759,
+  #c96480,
+  #ffffff,
+  #17a5ce
+);
+
+// Mobile landing color scheme
+$primary-app: #ebf4f6;
+$secondary-app: #424aa0;
+
+$success: $green;
+$info: $blue;
+$warning: $yellow;
+$danger: $red;
+$gray: $gray-900;
+$light: $gray-400;
+$lighten: $gray-300;
+$soft: $gray-200;
+$dark: $dark;
+
+// Brands colors
+$facebook: #3b5999;
+$twitter: #1da1f2;
+$google: #db4337;
+$instagram: #e4405f;
+$pinterest: #bd081c;
+$youtube: #cd201f;
+$slack: #3aaf85;
+$dribbble: #ea4c89;
+$github: #222222;
+$dropbox: #1e90ff;
+$twitch: #4b367c;
+$paypal: #ecb32c;
+$behance: #0057ff;
+$reddit: #e84422;
+$patient: #f78f27;
+$doctor: #08b4cc;
+$financial: #b677ff;
+$pharmer: #f2424d;
+$admin: #09a6e0;
+$admin-dark: #0376a0;
+// Brand colors
+$brand-colors: ();
+$brand-colors: map-merge(
+  (
+    'facebook': $facebook,
+    'twitter': $twitter,
+    'google': $google,
+    'instagram': $instagram,
+    'pinterest': $pinterest,
+    'youtube': $youtube,
+    'slack': $slack,
+    'dribbble': $dribbble,
+    'dropbox': $dropbox,
+    'twitch': $twitch,
+    'paypal': $paypal,
+    'behance': $behance,
+    'reddit': $reddit,
+    'github': $github
+  ),
+  $brand-colors
+);
+
+// Theme colors
+$theme-colors: ();
+$theme-colors: map-merge(
+  (
+    'primary': $primary,
+    'secondary': $secondary,
+    'tertiary': $tertiary,
+    'quaternary': $quaternary,
+    'primary-app': $primary-app,
+    'secondary-app': $secondary-app,
+    'light': $light,
+    'lighten': $lighten,
+    'success': $success,
+    'info': $info,
+    'warning': $warning,
+    'danger': $danger,
+    'white': $white,
+    'gray': $gray,
+    'indigo': $indigo,
+    'dark': $dark,
+    'soft': $soft,
+    'black': $black,
+    'blue': $blue,
+    'pink': $pink,
+    'cyan': $cyan,
+    'purple': $purple,
+    'soft-indigo': $soft-indigo,
+    'soft-green': $soft-green,
+    'gray-100': $gray-100,
+    'gray-200': $gray-200,
+    'gray-300': $gray-300,
+    'gray-400': $gray-400,
+    'gray-500': $gray-500,
+    'gray-600': $gray-600,
+    'gray-700': $gray-700,
+    'gray-800': $gray-800,
+    'facebook': $facebook,
+    'twitter': $twitter,
+    'google': $google,
+    'instagram': $instagram,
+    'pinterest': $pinterest,
+    'youtube': $youtube,
+    'slack': $slack,
+    'dribbble': $dribbble,
+    'dropbox': $dropbox,
+    'twitch': $twitch,
+    'paypal': $paypal,
+    'behance': $behance,
+    'reddit': $reddit,
+    'github': $github
+  ),
+  $theme-colors
+);
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: math.div($spacer, 4),
+  2: math.div($spacer, 2),
+  3: $spacer,
+  4: math.div($spacer, 1.5),
+  5: $spacer * 3,
+  6: (
+    $spacer * 5
+  ),
+  7: (
+    $spacer * 8
+  ),
+  8: (
+    $spacer * 10
+  ),
+  9: (
+    $spacer * 11
+  ),
+  10: (
+    $spacer * 14
+  ),
+  11: (
+    $spacer * 16
+  ),
+  12: (
+    $spacer * 20
+  ),
+  'sm': (
+    $spacer * 1
+  ),
+  'md': (
+    $spacer * 2
+  ),
+  'lg': (
+    $spacer * 4
+  ),
+  'xl': (
+    $spacer * 8
+  )
+);
+
+// z index
+
+$space: 10000;
+$sky: 1000;
+$ground: 100;
+$under_ground: 10;
+
+// screens
+$small: 360px;
+$medium: 720px;
+$large: 1000px;
+$xl: 1300px;
+$xxl: 1500px;

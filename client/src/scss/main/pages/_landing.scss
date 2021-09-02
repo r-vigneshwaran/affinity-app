@@ -1,0 +1,43 @@
+.content {
+  overflow: visible;
+  width: 100%;
+  background: #000;
+  height: 100%;
+  margin-top: 90px;
+  @include transition(all 0.3s);
+  width: 100%;
+  &.active {
+    margin-left: 130px;
+  }
+}
+.main-content-area {
+  width: 1200px;
+  height: 100%;
+}
+body {
+  // overflow-x: hidden;
+}
+#root {
+  // overflow-x: scroll;
+}
+body,
+html,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  background: #000;
+  // overflow-x: scroll;
+}
+
+.container {
+  position: relative;
+  width: auto;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 20px;
+}
