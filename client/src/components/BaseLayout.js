@@ -50,7 +50,7 @@ const BaseLayout = ({ Component, banner, isShowSidebar }) => {
           selectedCategory={selectedCategory}
         />
       )}
-      <main className={`content ${active ? 'active' : ''}`}>
+      <main className={`content ${isShowSidebar && active ? 'active' : ''}`}>
         <Component selectedCategory={selectedCategory} />
       </main>
     </>
