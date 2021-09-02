@@ -4,10 +4,11 @@ import StripeCheckout from 'react-stripe-checkout';
 import { requestCheckoutURL } from 'actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const Checkout = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const [currentStep, setCurrentStep] = useState(1);
   const cartList = useSelector((state) => state.products.cart);
 
@@ -19,7 +20,11 @@ const Checkout = () => {
     };
     dispatch(requestCheckoutURL(data));
   };
-
+  useEffect(() => {
+    if (!cartList || !cartList?.length > 0) {
+      history.push('/');
+    }
+  }, [cartList, history]);
   const ComponentOne = () => {
     const [firstName, setFirstName] = useState('');
     const [middleName, setMiddleName] = useState('');
@@ -191,6 +196,7 @@ const Checkout = () => {
     );
   };
   const ComponentTwo = () => {
+    const condition = cartList || cartList?.length > 0;
     return (
       <div className="one">
         <h1 className="white-container">
@@ -198,8 +204,7 @@ const Checkout = () => {
           <div className="form">
             <fieldset>
               <legend>Confirm Products :</legend>{' '}
-              {cartList &&
-                cartList.length > 0 &&
+              {condition &&
                 cartList.map((item) => (
                   <React.Fragment key={item.id}>
                     <div className="cart-item trans">
@@ -228,7 +233,8 @@ const Checkout = () => {
               <div className="sub-total">
                 <p>
                   SubTotal : $
-                  {cartList.reduce((a, b) => a + (b['price'] || 0), 0)}
+                  {condition &&
+                    cartList.reduce((a, b) => a + (b['price'] || 0), 0)}
                 </p>
               </div>
             </fieldset>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Checkout = ({ subTotal }) => {
   return (
-    <div className="checkout  w-100">
+    <div className="checkout w-100">
       <Link to="/" className="back flex-row flex-center">
         <i className="bx bx-arrow-back"></i>
         <p>Back to Shop</p>
