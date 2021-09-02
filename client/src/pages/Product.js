@@ -57,14 +57,7 @@ const Product = () => {
       setIsInCart(cartList.some((i) => i.id === product.id));
     }
   }, [cartList, product]);
-  const makePayment = (token) => {
-    const items = [1, 2, 3, 4];
-    const data = {
-      token,
-      products: items
-    };
-    dispatch(requestCheckoutURL(data));
-  };
+  const condition = cartList || cartList?.length > 0;
   return (
     <div className="product-container">
       <div className="app">
@@ -120,7 +113,7 @@ const Product = () => {
             </div>
           </div>
         )}{' '}
-        {cartList.length > 0 && <Checkout />}
+        {condition && <Checkout />}
       </div>
     </div>
   );
