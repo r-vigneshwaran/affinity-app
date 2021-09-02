@@ -161,9 +161,22 @@
   }
 }
 .checkout {
+  display: flex;
   justify-content: space-between;
+  flex-direction: row;
   margin: 20px 0px;
   padding: 0px 20px;
+  @media screen and (max-width: $large) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .sub-total {
+      margin: 10px 0px;
+    }
+    .back {
+      margin: 10px 0px;
+    }
+  }
   .sub-total {
     .btn-checkout {
       margin-left: 15px;

@@ -23,7 +23,7 @@ const Header = ({ scrolled, handleClickMenu, banner, isShowSidebar }) => {
         <ul>
           <li className={`cart ${scrolled ? 'primary' : ''}`}>
             <span className="count">{count}</span>
-            <Link to="/cart" className="logo">
+            <Link to="/cart" className={`cart ${scrolled ? 'primary' : ''}`}>
               <i className="bx bx-cart"></i>
             </Link>
             {condition && (
@@ -67,7 +67,7 @@ const Header = ({ scrolled, handleClickMenu, banner, isShowSidebar }) => {
             )}
           </li>
           <li>
-            <a href="#" className="logo">
+            <a href="#" className="user">
               <i className="bx bx-user"></i>
             </a>
           </li>

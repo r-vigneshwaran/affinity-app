@@ -8,6 +8,9 @@
   width: 100%;
   &.active {
     margin-left: 130px;
+    @media (max-width: $large) {
+      margin-left: 0px;
+    }
   }
 }
 .main-content-area {
