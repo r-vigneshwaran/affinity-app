@@ -19,8 +19,8 @@ const {
 
 const initialState = {
   productsList: null,
-  cart: null,
-  count: 0,
+  cart: JSON.parse(localStorage.getItem('cart')) || null,
+  count: parseInt(localStorage.getItem('quantity')) || 0,
   categories: null,
   userData: null
 };
@@ -29,8 +29,10 @@ export default function products(state = initialState, { type, payload }) {
     case SET_PRODUCTS_LIST:
       return { ...state, productsList: payload };
     case SET_ITEM_CART:
+      localStorage.setItem('cart', JSON.stringify(payload));
       return { ...state, cart: payload };
     case SET_CART_COUNT:
+      localStorage.setItem('quantity', payload);
       return { ...state, count: payload };
     case SET_CATEGORIES:
       return { ...state, categories: payload };
