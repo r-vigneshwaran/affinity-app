@@ -9,12 +9,12 @@ const BaseLayout = ({ Component, banner, isShowSidebar }) => {
   const [selectedCategory, setSelectedCategory] = useState('');
 
   useEffect(() => {
-    // if (showLoader) {
-    //   document.body.style.overflow = 'hidden';
-    // } else {
-    //   document.body.style.overflowX = 'hidden';
-    //   document.body.style.overflowY = 'unset';
-    // }
+    if (showLoader) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflowX = 'hidden';
+      document.body.style.overflowY = 'unset';
+    }
   }, [showLoader]);
 
   useEffect(() => {
