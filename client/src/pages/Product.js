@@ -2,10 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useSelector, useDispatch } from 'react-redux';
-import { addToCart, getProductsList, requestCheckoutURL } from 'actions';
+import { addToCart, getProductsList } from 'actions';
 import { useParams } from 'react-router-dom';
 import Checkout from './children/Checkout';
-import StripeCheckout from 'react-stripe-checkout';
 
 const Product = () => {
   const dispatch = useDispatch();
